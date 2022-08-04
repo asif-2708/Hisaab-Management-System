@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hisab.controller.ItemPurchaseListController">
+   <top>
+      <AnchorPane prefHeight="57.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+         <children>
+            <DatePicker fx:id="txtFromDate" layoutX="8.0" layoutY="22.0" prefHeight="25.0" prefWidth="136.0" />
+            <Label layoutX="9.0" layoutY="2.0" text="From Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="txtToDate" layoutX="152.0" layoutY="22.0" prefHeight="25.0" prefWidth="136.0" />
+            <Label layoutX="153.0" layoutY="2.0" text="To Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSearchByDate" layoutX="298.0" layoutY="21.0" mnemonicParsing="false" onAction="#searchByDate" prefHeight="26.0" prefWidth="39.0" text="OK">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnNewPurchase" layoutX="350.0" layoutY="18.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="New">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPrintPurchaseList" layoutX="428.0" layoutY="18.0" mnemonicParsing="false" onAction="#openPurchaseReport" prefHeight="27.0" prefWidth="70.0" text="Print">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRefresh" layoutX="510.0" layoutY="20.0" mnemonicParsing="false" onAction="#refreshData" prefHeight="27.0" prefWidth="70.0" text="Refresh">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView fx:id="tablePurchaseList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columPurchaseDate" prefWidth="114.0" text="Date" />
+          <TableColumn fx:id="columPurchaseBillNo" prefWidth="57.0" text="Bill No" />
+            <TableColumn fx:id="columPurchasePartyName" prefWidth="184.0" text="Party Name" />
+            <TableColumn fx:id="columPurchaseType" prefWidth="99.0" text="Purchase Type" />
+            <TableColumn fx:id="columPurchaseTotalAmt" prefWidth="75.0" text="Total Amt." />
+            <TableColumn fx:id="columPurchaseTaxAmt" prefWidth="75.0" text="Tax (GST)" />
+            <TableColumn fx:id="columPurchaseNetAmt" prefWidth="75.0" text="Net Amt." />
+            <TableColumn fx:id="columPurchaseRemark" prefWidth="75.0" text="Remark" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

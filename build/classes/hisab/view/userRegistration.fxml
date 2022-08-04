@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hisab.controller.UserRegistrationController">
+   <left>
+      <VBox prefHeight="390.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="txtFirstName" labelFloat="true" promptText="First Name">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="25.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtLastName" labelFloat="true" promptText="Last Name">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtMobile" labelFloat="true" promptText="Mobile">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtUserName" labelFloat="true" promptText="User Name">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" labelFloat="true" promptText="Password">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="txtConfirmPassword" promptText="Confrim Password">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </JFXPasswordField>
+            <JFXComboBox fx:id="cmbUserType" labelFloat="true" prefHeight="25.0" prefWidth="184.0" promptText="Select User Type">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <Pane prefHeight="61.0" prefWidth="189.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnSaveUser" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#saveUserRegistration" text="SAVE">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" size="15" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnClearUser" layoutX="113.0" layoutY="19.0" mnemonicParsing="false" onAction="#clearUserRegistration" text="CLEAR">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="REFRESH" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnUpdateUser" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#updateUserRegistration" prefHeight="25.0" prefWidth="80.0" text="UPDATE">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" size="15" />
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: dark green;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="24.0" layoutY="1.0" text="User Registration" textFill="#035430">
+               <font>
+                  <Font name="Agency FB Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView fx:id="tableUserRegistration" prefHeight="357.0" prefWidth="453.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columFirstName" prefWidth="75.0" text="First Name" />
+          <TableColumn fx:id="columLastName" prefWidth="75.0" text="Last Name" />
+            <TableColumn fx:id="columMobile" prefWidth="75.0" text="Mobile" />
+            <TableColumn fx:id="columUserName" prefWidth="75.0" text="UserName" />
+            <TableColumn fx:id="columPassword" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="columUserType" prefWidth="75.0" text="User Type" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="editContextMenu" mnemonicParsing="false" onAction="#editUserRegistration" text="Edit" />
+                  <MenuItem fx:id="deleteContextMenu" mnemonicParsing="false" onAction="#deleteUserRegistration" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </center>
+</BorderPane>

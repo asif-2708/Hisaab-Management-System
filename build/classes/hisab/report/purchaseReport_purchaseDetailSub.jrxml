@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="salesReport_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="purchaseId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$F{purchase_master_id}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select pd.*,it.item_name from purchase_detail as pd join item_master as it on it.item_master_id=pd.item_id where pd.purchase_master_id=$P{purchaseId}]]>
+	</queryString>
+	<field name="purchase_detail_id" class="java.lang.Integer"/>
+	<field name="purchase_master_id" class="java.lang.Integer"/>
+	<field name="item_id" class="java.lang.Integer"/>
+	<field name="item_per" class="java.lang.String"/>
+	<field name="item_qty" class="java.lang.Integer"/>
+	<field name="pur_price" class="java.lang.Double"/>
+	<field name="total_amt" class="java.lang.Double"/>
+	<field name="CGST" class="java.lang.Double"/>
+	<field name="SGST" class="java.lang.Double"/>
+	<field name="IGST" class="java.lang.Double"/>
+	<field name="total_tax_amt" class="java.lang.Double"/>
+	<field name="dis_amt" class="java.lang.Double"/>
+	<field name="payable_amt" class="java.lang.Double"/>
+	<field name="pur_date" class="java.sql.Date"/>
+	<field name="item_name" class="java.lang.String"/>
+	<variable name="sno" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{sno}+1]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="35" y="2" width="113" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="2" width="16" height="22"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S
+No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="2" width="50" height="18"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HSN/SAC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="2" width="23" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="1" width="47" height="19"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="1" width="23" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Per]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="1" width="28" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="1" width="46" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disc.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="477" y="1" width="70" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="0" width="1" height="24"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="358" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="388" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="422" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="475" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="303" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="275" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="211" y="-1" width="1" height="25"/>
+				<graphicElement>
+					<pen lineWidth="0.2"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<elementGroup>
+				<textField>
+					<reportElement x="35" y="0" width="113" height="15">
+						<property name="net.sf.jasperreports.export.pdf.tag.tr" value="full"/>
+					</reportElement>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="2" y="1" width="16" height="14"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="278" y="3" width="22" height="12"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_qty}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="362" y="4" width="23" height="11"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{item_per}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="428" y="3" width="46" height="12"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dis_amt}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="20" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="477" y="2" width="70" height="13"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payable_amt}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="211" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="275" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="303" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="358" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="388" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="422" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="475" y="0" width="1" height="15"/>
+					<graphicElement>
+						<pen lineWidth="0.2"/>
+					</graphicElement>
+				</line>
+			</elementGroup>
+			<textField>
+				<reportElement x="304" y="0" width="54" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pur_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="12" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

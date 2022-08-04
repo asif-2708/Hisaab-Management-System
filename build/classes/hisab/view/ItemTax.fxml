@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hisab.controller.ItemTaxController">
+   <children>
+      <BorderPane prefHeight="462.0" prefWidth="815.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="tableItemTax" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="itemTaxIdColum" prefWidth="38.0" text="id" />
+                <TableColumn fx:id="itemTaxNameColum" prefWidth="101.0" text="Tax Name" />
+                  <TableColumn fx:id="itemTaxSystemColum" prefWidth="79.0" text="Tax System" />
+                  <TableColumn fx:id="itemTaxCategoryColum" prefWidth="87.0" text="Tax Category" />
+                  <TableColumn fx:id="itemTaxOnColum" prefWidth="58.0" text="Tax On" />
+                  <TableColumn fx:id="itemTaxSgstColum" prefWidth="64.0" text="SGST %" />
+                  <TableColumn fx:id="itemTaxCgstColum" prefWidth="71.0" text="CGST %" />
+                  <TableColumn fx:id="itemTaxIgstColum" prefWidth="66.0" text="IGST %" />
+                  <TableColumn fx:id="itemTaxAddiColum" prefWidth="99.0" text="Addi Tax %" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="editContextMenu" mnemonicParsing="false" onAction="#editItemTax" text="Edit" />
+                        <MenuItem fx:id="deleteContextMenu" mnemonicParsing="false" onAction="#removeItemTax" text="Delete" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </center>
+         <top>
+            <HBox prefHeight="37.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Tax Slab" textFill="#054025">
+                     <font>
+                        <Font name="Forte" size="27.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" top="2.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="363.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="txtItemTaxName" labelFloat="true" promptText="Tax Name">
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemTaxSgst" labelFloat="true" promptText="SGST %">
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemTaxCgst" labelFloat="true" prefHeight="37.0" prefWidth="154.0" promptText="CGST %">
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemTaxIgst" labelFloat="true" promptText="IGST %">
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemTaxAddi" labelFloat="true" promptText="Addi Tax %">
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <ComboBox fx:id="cmbItemTaxSystem" prefWidth="150.0" promptText="Tax System">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="25.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="cmbItemTaxCategory" layoutX="10.0" layoutY="245.0" prefWidth="150.0" promptText="Tax Category">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="cmbItemTaxOn" layoutX="10.0" layoutY="270.0" prefWidth="150.0" promptText="Tax On">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="btnSaveItemTax" layoutX="-6.0" layoutY="2.0" onAction="#saveItemTax" text="Save">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SAVE" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnRefreshIemTax" blendMode="SRC_ATOP" layoutX="60.0" layoutY="2.0" onAction="#refreshItemTax" ripplerFill="#2d08ff" text="Refresh">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="REFRESH" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdateItemTax" layoutX="-6.0" layoutY="2.0" onAction="#updateItemTax" text="Update">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="EDIT" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

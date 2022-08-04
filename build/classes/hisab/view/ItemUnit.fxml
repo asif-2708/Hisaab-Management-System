@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="306.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hisab.controller.ItemUnitController">
+   <top>
+      <AnchorPane id="AnchorPane" prefHeight="31.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="17.0" layoutY="1.0" text="Item Unit" textFill="#6f0101">
+               <font>
+                  <Font name="Times New Roman Bold" size="29.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="304.0" layoutY="5.0" prefHeight="25.0" prefWidth="194.0" promptText="Search" />
+            <OctIconView glyphName="SEARCH" layoutX="275.0" layoutY="27.0" size="19" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView fx:id="tableItemUnit" nodeOrientation="LEFT_TO_RIGHT" prefHeight="327.0" prefWidth="326.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="itemUnitIdColum" prefWidth="89.0" text="Id" />
+          <TableColumn fx:id="itemUnitNameColum" prefWidth="327.0" text="Item Unit" />
+            <TableColumn fx:id="itemUnitQtyColum" prefWidth="75.0" text="Unit Qty" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="editContextMenu" mnemonicParsing="false" onAction="#editItemUnit" text="Edit" />
+                  <MenuItem fx:id="deleteContextMenu" mnemonicParsing="false" onAction="#removeItemUnit" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </center>
+   <left>
+      <Pane prefHeight="375.0" prefWidth="176.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="txtItemUnitName" focusColor="#005a2f" layoutX="16.0" layoutY="19.0" prefHeight="25.0" prefWidth="144.0" promptText="Unit Name" unFocusColor="#042c0f" />
+            <JFXTextField fx:id="txtItemUnitQty" focusColor="#005a2f" layoutX="16.0" layoutY="59.0" prefHeight="25.0" prefWidth="144.0" promptText="Qty" unFocusColor="#042c0f" />
+            <JFXButton fx:id="btnUpdateItemUnit" layoutX="2.0" layoutY="102.0" onAction="#updateItemUnit" prefHeight="25.0" prefWidth="85.0" text="Update">
+               <graphic>
+                  <FontAwesomeIconView glyphName="EDIT" size="15" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnSaveItemUnit" layoutX="3.0" layoutY="101.0" onAction="#saveItemUnit" prefHeight="25.0" prefWidth="70.0" text="Save">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SAVE" size="15" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnRefreshItemUnit" layoutX="83.0" layoutY="101.0" onAction="#refreshItemUnit" prefHeight="25.0" prefWidth="85.0" text="Refresh">
+               <graphic>
+                  <FontAwesomeIconView glyphName="REFRESH" size="15" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

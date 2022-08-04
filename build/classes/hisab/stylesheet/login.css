@@ -1,0 +1,37 @@
+
+*{
+    -fx-primary:   #273468;
+    -fx-secondary:  #F1F1F1;
+    -fx-primarytext: #B9B9B9;
+    -fx-secondarytext:#276837; 
+}
+.root {
+    -fx-background-color: -fx-secondary;
+}
+.glyph-icon{
+        -fx-fill: -fx-primary;
+
+}
+.button{
+    -fx-text-fill: -fx-primary;
+}
+/* specific design for login button */
+.login-button{
+    -fx-border-color: -fx-secondarytext;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-text-fill: bold;
+}
+.login-button:hover{
+    -fx-border-color: -fx-primary;
+    -fx-text-fill: -fx-primarytext;
+   -fx-background-color: -fx-secondarytext;   
+}
+.radio-button{
+    -fx-font-size: 8pt;
+}
+.text-field{
+    -fx-text-fill: -fx-primary;
+    -fx-font-size: 12pt;
+    -jfx-focus-color: -fx-secondarytext;
+}

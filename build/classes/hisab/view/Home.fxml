@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.input.*?>
+
+
+<BorderPane fx:id="mainContent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../stylesheet/main.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hisab.controller.HomeController">
+    <left>
+        <AnchorPane prefHeight="330.0" prefWidth="139.0" style="-fx-border-color: #273468;">
+            <children>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="46.0" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Account">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="ADDRESS_CARD" size="15" text="" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="78.0" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Item">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="SHOPPING_CART" size="15" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="114.0" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Purchase">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="CART_ARROW_DOWN" size="15" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="149.0" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Sales">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="SEND" size="15" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="181.0" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Ledger">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="FOLDER_OPEN" size="15" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="btnStockMaster" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutY="213.0" onAction="#showStockMaster" prefHeight="30.0" prefWidth="130.0" styleClass="sidebar-button" text="Stock">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="DATABASE" size="15" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </left>
+    <bottom>
+        <HBox prefHeight="43.0" prefWidth="600.0" style="-fx-border-color: #273468;" BorderPane.alignment="CENTER" />
+    </bottom>
+    <top>
+        <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT">
+            <children>
+                <MenuBar prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #F1F1F1;" HBox.hgrow="ALWAYS">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Master">
+                            <items>
+                                <Menu mnemonicParsing="false" text="Item Entry">
+                                    <items>
+                                        <MenuItem fx:id="mnuItemBrand" mnemonicParsing="false" onAction="#showItemBrand" text="Item Brand" >
+                                            <accelerator>
+                                                <KeyCodeCombination alt="UP" code="b" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                            </accelerator>
+                                        </MenuItem>
+                                        <MenuItem fx:id="mnuItemCatagory" mnemonicParsing="false" onAction="#showItemCatagory" text="Item Catagory" />
+                                        <MenuItem fx:id="mnuItemUnit" mnemonicParsing="false" onAction="#showItemUnit" text="Unit" />
+                                    </items>
+                                </Menu>
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem fx:id="mnuItemTax" mnemonicParsing="false" onAction="#showItemTax" text="Item Tax" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <Menu mnemonicParsing="false" text="Account Entry">
+                                    <items>
+                                   <!--  <MenuItem fx:id="mnuAccount" mnemonicParsing="false" onAction="#showAccount" text="Account Entry" /> -->
+                                        <MenuItem fx:id="mnuAccountCatagory" mnemonicParsing="false" onAction="#showAccountCatagory" text="Account Category" />
+                                    </items>
+                                </Menu>
+                                <MenuItem fx:id="mnuUser" mnemonicParsing="false" onAction="#showUser" text="User " />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Entry">
+                            <items>
+                                <MenuItem fx:id="insertItem" mnemonicParsing="false" onAction="#ItemEntry" text="Insert Item" />
+                              <!--  <MenuItem fx:id="mnuAccount1" mnemonicParsing="false" onAction="#showAccount" text="Account Entry" /> -->
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Transaction">
+                            <items>
+                                <MenuItem fx:id="mnuPurchase" mnemonicParsing="false" onAction="#showItemPurchase" text="Purchase" />
+                              <!--  <MenuItem fx:id="mnuPurchaseReturn" mnemonicParsing="false" text="Purchase Return" /> -->
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem fx:id="mnuSales" mnemonicParsing="false" onAction="#showItemSale" text="Sales" />
+                            <!--    <MenuItem fx:id="mnuSalesReturn" mnemonicParsing="false" text="Sales Return" /> -->
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Report">
+                            <items>
+                                <MenuItem fx:id="mnuSalesList" mnemonicParsing="false" onAction="#showSalesList" text="Sales Report" />
+                                <MenuItem fx:id="mnuPurchaseList" mnemonicParsing="false" onAction="#showPurchaseList" text="Purchase Report" />
+                                <MenuItem fx:id="mnuStockList" mnemonicParsing="false" onAction="#showStockList" text="Stock Report" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help" />
+                    </menus>
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </MenuBar>
+                <FontAwesomeIconView glyphName="WINDOW_MINIMIZE" size="15" styleClass="glyph-icon-minimize">
+                    <HBox.margin>
+                        <Insets right="15.0" top="-5.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+                <FontAwesomeIconView glyphName="CLOSE" size="15" styleClass="glyph-icon-close" wrappingWidth="11.6826171875">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #273468;" BorderPane.alignment="CENTER">
+            <center>
+                <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>
